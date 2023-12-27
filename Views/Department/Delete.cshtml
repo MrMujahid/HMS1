@@ -1,0 +1,8 @@
+﻿@model HMS.Models.EntityModels.Department
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="Id" />
+    Are you sure?
+    Name: @Model.Name <br />
+    <input type="submit" class="btn btn-danger" value="Confirm" />
+</form>

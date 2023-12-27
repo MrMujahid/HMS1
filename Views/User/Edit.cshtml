@@ -1,0 +1,48 @@
+﻿@using HMS.Models.EntityModels
+@model User
+
+<h1 style="padding:20px">Edit</h1>
+
+<form asp-action="Edit" asp-controller="User" style="width:400px; margin:0 auto">
+
+    <div>
+        <b> Role</b><br/>
+        <select asp-for="RoleId" class="form-control">
+            @foreach (var r in ViewBag.Roles)
+            {
+                <option value="@r.Id">@r.Name</option>
+            }
+        </select>
+    </div>
+    <div>
+        <b>User Name</b><br />
+        <input type="text" asp-for="Name" class="form-control" />
+    </div>
+    <div>
+        <b>Full Name<br /></b>
+        <input type="text" asp-for="FullName" class="form-control" />
+    </div>
+    <div>
+        <b>Contact<br /></b>
+        <input type="text" asp-for="ContactNo" class="form-control" />
+    </div>
+    <div>
+        <b>Email<br /></b>
+        <input type="text" asp-for="Email" class="form-control" />
+    </div>
+    <div>
+        <b>Status<br /></b>
+        <input type="text" asp-for="Inactive" class="form-control" />
+    </div>
+        <div>
+        <b>Password<br /></b>
+        <input type="password" asp-for="Password" value="@Model.Password" class="form-control" />
+    </div>
+    <div>
+        <b>Photo</b>
+        <input type="file" asp-for="Photo" name="Photo" />
+    </div>
+    <div>
+        <input type="submit" value="Submit" name="Submit" class="btn btn-primary" />
+    </div>
+</form>

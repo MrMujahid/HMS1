@@ -1,0 +1,47 @@
+﻿@using HMS.Models.EntityModels;
+@model ICollection<Role>
+
+<form asp-action="Create">
+    <div>
+        Role<br />
+        <select name="RoleId">
+            @foreach (Role r in Model)
+            {
+                <option value="@r.Id">@r.Name</option>
+            }
+        </select>
+    </div>
+    <div>
+        <label for="Name">User</label><br />
+        <input type="text" name="Name" />
+    </div>
+    <div>
+        <label for="FullName">FullName</label><br />
+        <input type="text" name="FullName" />
+    </div>
+    <div>
+        <label for="Contact">Contact</label><br />
+        <input type="text" name="ContactNo" />
+    </div>
+    <div>
+        <label for="Email">Email</label><br />
+        <input type="email" name="Email" />
+    </div>
+    <div>
+        <label for="Inactive">Inactive</label><br />
+        <input type="bool" name="Inactive" />
+    </div>
+     <div>
+        <label for="Password">Password</label><br />
+        <input type="password" name="Password" />
+    </div>
+    <div>
+        <label for="Photo">Photo</label><br />
+        <input type="file" name="Photo" />
+    </div>
+
+    <div>
+        <input type="submit" name="submit" value="Save" />
+    </div>
+
+</form>

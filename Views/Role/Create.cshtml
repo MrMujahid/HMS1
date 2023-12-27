@@ -1,0 +1,13 @@
+﻿@model HMS.Models.EntityModels.Role
+
+<form asp-action="Create">
+    <div class="from-group">
+        <label asp-for="Name" class="control-label"></label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </div>
+
+</form>
+<a asp-action="Index" class="btn btn-info">Back</a>

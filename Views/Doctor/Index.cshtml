@@ -1,0 +1,102 @@
+﻿@using HMS.Models.EntityModels;
+@using HMS.Models.ViewModels;
+
+
+<section class="content-header" >
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Manage Dcotors</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">Manage Doctor</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content" style="width: 1000px; margin:auto">
+
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                <a asp-action="Create" class="btn btn-success">Create New</a>
+
+            </h3>
+
+            <div class="card-tools">
+                <form asp-action="Index">
+                    <div class="input-group input-group-sm" style="width: 150px;">
+                        <input type="text" name="search" class="form-control float-right" placeholder="Search">
+
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-default">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body table-responsive p-0">
+
+            <table class="table table-hover text-nowrap">
+                <thead>
+                    <tr>
+                        @*@Html.DisplayNameFor(model => model.Name)*@
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Department</th>
+                        <th>Contact </th>
+                        <th>Designation</th>
+                        <th>Remarks</th>
+                        <th>Action</th>
+                    </tr>
+                    @foreach (var item in Model)
+                    {
+                       
+                        <tr>
+                            <td>@item.Id</td>
+                            <td>@item.Name</td>
+                            <td>@item.DepartmentId</td>
+                            <td>@item.ContactNo</td>
+                            <td>@item.Designation</td>
+                            <td>@item.Remark</td>
+                            <td>
+                                <div class="btn-group">
+                                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary btn-sm">Edit</a>
+                                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info btn-sm">Details</a>
+                                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm">Delete</a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            @{
+                Pagination p = ViewBag.Pagination;
+            }
+            <ul class="pagination">
+                <li class="paginate_button page-item first"><a tabindex="0" asp-controller="Doctor" asp-route-page="1" class="page-link">First</a></li>
+                <li class="paginate_button page-item previous"><a tabindex="0" asp-controller="Doctor" asp-route-page="@p.PreviousPage" class="page-link">Previous</a></li>
+                <li class="paginate_button page-item next"><a tabindex="0" asp-controller="Doctor" asp-route-page="@p.NextPage" class="page-link">Next</a></li>
+                <li class="paginate_button page-item last"><a tabindex="0" asp-controller="Doctor" asp-route-page="@p.LastPage" class="page-link">Last</a></li>
+            </ul>
+
+
+        </div>
+        <!-- /.card-body -->
+
+    </div>
+
+</section>
+<!-- /.content -->

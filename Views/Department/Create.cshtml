@@ -1,0 +1,15 @@
+﻿@model HMS.Models.EntityModels.Department
+
+
+<form asp-action="Create" style="width:400px; margin:0 auto;">
+    <div class="from-group">
+        <label asp-for="Name" class="control-label"></label>
+        <input asp-for="Name" class="form-control" />
+    </div> <br />
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </div>
+
+    <a asp-action="Index" class="form-control btn btn-success ">Back</a>
+
+</form>

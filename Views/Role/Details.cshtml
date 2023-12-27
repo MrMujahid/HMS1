@@ -1,0 +1,23 @@
+﻿@using HMS.Models.EntityModels
+@model Role
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayFor(model=>model.Id) -
+            @Html.DisplayFor(model=>model.Name)
+        </th>
+    </tr>
+</table>
+<table class="table">
+    <tr>
+        <th>User List</th>
+    </tr>
+    @foreach (var item in Model.Users)
+    {
+        <tr>
+            <td>@Html.DisplayFor(m=>item.Name)</td>
+        </tr>
+    }
+
+</table>

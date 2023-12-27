@@ -1,0 +1,12 @@
+﻿@model HMS.Models.EntityModels.Department
+
+<form asp-action="Edit" asp-controller="Department">
+
+    <input type="hidden" asp-for="Id" />
+    <label asp-for="Name" class="control-label"></label>
+    <input asp-for="Name" class="form-control" />
+    <br />
+    <input type="submit" name="submit" class="btn btn-primary" value="Save Chance" />
+
+</form>
+<a asp-action="Index" class="btn btn-info">Back</a>

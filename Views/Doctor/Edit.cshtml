@@ -1,0 +1,41 @@
+﻿@using HMS.Models.EntityModels
+@model Doctor
+
+
+<h1>Edit</h1>
+
+<form asp-action="Edit" asp-controller="Doctor" class="col-lg-2" style="margin: 0 auto">
+
+    <div>
+        <b>Doctor Name</b> <br/>
+        <input type="text" asp-for="Name" class="form-control" />
+    </div>
+    <div>
+        <div>
+            <b> Role</b><br />
+            <select asp-for="DepartmentId" class="form-control">
+                @foreach (var r in ViewBag.Departments)
+                {
+                    <option value="@r.Id">@r.Name</option>
+                }
+            </select>
+        </div>
+    </div>
+    <div>
+        <b>Contact No</b> <br />
+        <input type="text" asp-for="ContactNo" class="form-control" />
+    </div>
+    <div>
+        <b>Designation</b> <br />
+        <input type="text" asp-for="Designation" class="form-control" />
+    </div>
+    <div>
+        <b>Remarks</b> <br />
+        <input type="text" asp-for="Remark" class="form-control" />
+    </div>
+    <div>
+        <input type="submit" value="Submit" name="Submit" class="btn btn-primary" />
+    </div>
+   
+
+</form>

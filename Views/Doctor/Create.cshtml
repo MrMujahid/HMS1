@@ -1,0 +1,44 @@
+﻿@using HMS.Models.EntityModels;
+@model ICollection<Department>
+
+
+<form asp-action="Create">
+
+    <div class="card-body " style="width: 600px; position: center ">
+        <div class="form-group">
+            <label for="Name">Name</label>
+            <input type="text" class="form-control" name="name" placeholder="Enter Name">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Department</label> <br />
+            <select name="DepartmentId" class="form-control">
+                @foreach (Department s in Model)
+                {
+                    <option value="@s.Id">@s.Name</option>
+                }
+            </select>
+           
+        </div>
+        <div class="form-group">
+            <label for="ContactNo">Contact No</label>
+            <input type="text" class="form-control" name="ContactNo" placeholder="Input Contact">
+        </div>
+        <div class="form-group">
+            <label for="Designation">Designation</label>
+            <input type="text" class="form-control" name="Designation" placeholder="Designation">
+        <div class="form-group">
+                <label for="Remark">Remark</label>
+                <input type="text" class="form-control" name="remark" placeholder="Remark">
+        </div>
+      
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+
+        </div>
+
+
+
+    </div>
+  
+</form>
